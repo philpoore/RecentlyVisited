@@ -7,6 +7,7 @@ For each user, stores the last 100 recently visisted products / pages.
 For each visit, the unix timestamp in nanoseconds of the visit is stored.
 
 A Linked Hash Map is used for Least Recently Used data structure, giving following time complexity:
+
     - lookup Hash user visited product? O(1)
     - get list recently visited products O(1)
     - visit product O(1)
