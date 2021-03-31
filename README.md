@@ -8,9 +8,8 @@ For each visit, the unix timestamp in nanoseconds of the visit is stored.
 
 A Linked Hash Map is used for Least Recently Used data structure, giving following time complexity:
 
-    - lookup Hash user visited product? O(1)
-    - get list recently visited products O(1)
-    - visit product O(1)
+    - get: list recently visited products for user O(1)
+    - set: user visits product O(1)
 
 Only the last 100 unique products are stored. If a user revisits a product in the LRU, it timestamp is updated and 
 moved to the beggining of the list.
