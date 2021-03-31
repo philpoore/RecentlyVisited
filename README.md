@@ -18,32 +18,35 @@ moved to the beggining of the list.
 Communication with service is done via tcp protocol.
 The following binary commands are available:
 
-### `SET`
+### `set`
 Sets a recently visited product for a given user_id.
 - user_id's can be any string
 - product_id's are 64 bit unsigned ints
 ```
-SET {user_id} {product_id}
+set {user_id} {product_id}
 ```
 Example:
 
 Set user `123123` visiting product `5555`.
 ```
-echo "SET 123123 5555" | nc 127.0.0.1 8091
+echo "set 123123 5555" | nc 127.0.0.1 8091 -q0
 # ok
 ```
 
-### `GET`
+### `get`
 Gets the recent visited list for a given user.
 ```
-GET {user_id}
+get {user_id}
 ```
 
 Example:
 ```
-echo "GET 123123" | nc 127.0.0.1 8091
+echo "get 123123" | nc 127.0.0.1 8091
 # 5555
 ```
+
+### `quit`
+Terminate the connection.
 
 ## Build
 ```
